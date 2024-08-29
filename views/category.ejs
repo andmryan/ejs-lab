@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= category %> Menu</title>
+</head>
+<body>
+  <%- include('./partials/nav') %>
+  <h1><%= category %></h1>
+  <% if (menuItems.length > 0) { %>
+    <% menuItems.forEach(item => { %>
+      <div>
+        <h2><%= item.name %></h2>
+        <p>Price: $<%= item.price %></p>
+        <p>Rating: <%= item.rating %> stars</p>
+        <p><%= item.details %></p>
+      </div>
+    <% }) %>
+  <% } else { %>
+    <p>No items available in this category.</p>
+  <% } %>
+</body>
+</html>
